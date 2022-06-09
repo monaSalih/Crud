@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CandyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/candyData',[CandyController::class,'index']);
+Route::get('/delete/id/{id}',[CandyController::class,'delete']);
+Route::get('/addData',[CandyController::class,'addItem']);
+Route::post('/addData',[CandyController::class,'saveItem']);
+Route::get('/update/id/{id}',[CandyController::class,'updatePage']);
+Route::put('/update/id/{id}',[CandyController::class,'update']);
